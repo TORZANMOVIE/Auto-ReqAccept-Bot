@@ -7,6 +7,10 @@ import asyncio, datetime, time
 
 
 ACCEPTED_TEXT = "Hey {user}\n\nYour Request For {chat} Is Accepted ✅"
+button = [[        
+        InlineKeyboardButton('JOIN', url='https://t.me/TORZAN_MOVIE'),
+        InlineKeyboardButton('GROUP', url='https://t.me/TORZAN_MOVIE_GP1')
+    ]]
 START_TEXT = "Hai {}\n\nI am Auto Request Accept Bot With Working For All Channel. Add Me In Your Channel To Use"
 
 API_ID = int(22742631)
