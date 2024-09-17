@@ -7,10 +7,6 @@ import asyncio, datetime, time
 
 
 ACCEPTED_TEXT = "Hey {user}\n\nYour Request For {chat} Is Accepted ✅"
-button = [[        
-        InlineKeyboardButton('JOIN', url='https://t.me/TORZAN_MOVIE'),
-        InlineKeyboardButton('GROUP', url='https://t.me/TORZAN_MOVIE_GP1')
-    ]]
 START_TEXT = "Hai {}\n\nI am Auto Request Accept Bot With Working For All Channel. Add Me In Your Channel To Use"
 
 API_ID = int(22742631)
@@ -83,6 +79,10 @@ async def req_accept(c, m):
     user_id = m.from_user.id
     chat_id = m.chat.id
     if not await Data.find_one({'id': user_id}): await Data.insert_one({'id': user_id})
+    button = [[        
+        InlineKeyboardButton('JOIN', url='https://t.me/TORZAN_MOVIE'),
+        InlineKeyboardButton('GROUP', url='https://t.me/TORZAN_MOVIE_GP1')
+    ]]
     await c.approve_chat_join_request(chat_id, user_id)
     try: await c.send_message(user_id, ACCEPTED_TEXT.format(user=m.from_user.mention, chat=m.chat.title))
     except Exception as e: print(e)
