@@ -11,7 +11,7 @@ START_TEXT = "Hai {}\n\nI am Auto Request Accept Bot With Working For All Channe
 
 API_ID = int(22742631)
 API_HASH = "a82a982ed5b35890cb1a8c6ba85cf68c"
-BOT_TOKEN = "6216262814:AAELPliPYD5314Ugw162u6pQgad1DutWQkI"
+BOT_TOKEN = "6216262814:mongodb+srv://FREEKZZ:FREEKZZ@cluster0.fr7hlcs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DB_URL = "mongodb+srv://APPROVAL:APPROVAL@cluster0.ay3jony.mongodb.net/?retryWrites=true&w=majority"
 ADMINS = int(5064726202)
 
