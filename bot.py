@@ -19,7 +19,10 @@ Dbclient = AsyncIOMotorClient(DB_URL)
 Cluster = Dbclient['Cluster0']
 Data = Cluster['users']
 Bot = Client(name='AutoAcceptBot', api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
-       
+button = [[        
+        InlineKeyboardButton('JOIN', url='https://t.me/TORZAN_MOVIE'),
+        InlineKeyboardButton('GROUP', url='https://t.me/TORZAN_MOVIE_GP1')
+    ]]
       
      
 @Bot.on_message(filters.command("start") & filters.private)                    
@@ -79,11 +82,8 @@ async def req_accept(c, m):
     user_id = m.from_user.id
     chat_id = m.chat.id
     if not await Data.find_one({'id': user_id}): await Data.insert_one({'id': user_id})
-    button = [[        
-        InlineKeyboardButton('JOIN', url='https://t.me/TORZAN_MOVIE'),
-        InlineKeyboardButton('GROUP', url='https://t.me/TORZAN_MOVIE_GP1')
-    ]]
-    await c.approve_chat_join_request(chat_id, user_id)
+    await c.send_message(...., reply_markup=InlieKeyboardMarkup(button)
+    try: await c.approve_chat_join_request(chat_id, user_id)
     try: await c.send_message(user_id, ACCEPTED_TEXT.format(user=m.from_user.mention, chat=m.chat.title))
     except Exception as e: print(e)
    
